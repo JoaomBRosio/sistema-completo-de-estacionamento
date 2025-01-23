@@ -1,0 +1,461 @@
+{
+	"info": {
+		"_postman_id": "b8e9c0d4-a841-486d-9cb4-6b0ade388c8c",
+		"name": "Curso Park",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40422758"
+	},
+	"item": [
+		{
+			"name": "Usuarios - Create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"username\": \"bia@email.com\",\r\n        \"password\": \"123456\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/usuarios",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"usuarios"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Usuarios - Get Id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbmFAZW1haWwuY29tIiwiaWF0IjoxNzM1MjE0NzEyLCJleHAiOjE3MzUyMTY1MTIsInJvbGUiOiJDTElFTlRFIn0.O8zARwvyq2CYxoDlefJTy30G1yxPBde3356qn5el884",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/usuarios/16",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"usuarios",
+						"16"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Usuarios - Get All",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBlbWFpbC5jb20iLCJpYXQiOjE3MzUyMjY0MDAsImV4cCI6MTczNTIyODIwMCwicm9sZSI6IkFETUlOIn0._7RmG5SvYOjqhF3Va_yuPU73R8WFZPNF5E4bW4yFJmE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/usuarios",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"usuarios"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Usuarios - Update Password",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbmFAZW1haWwuY29tIiwiaWF0IjoxNzM1MjE0NzEyLCJleHAiOjE3MzUyMTY1MTIsInJvbGUiOiJDTElFTlRFIn0.O8zARwvyq2CYxoDlefJTy30G1yxPBde3356qn5el884",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"senhaAtual\":\"123456\",\r\n    \"novaSenha\":\"123456\",\r\n    \"confirmaSenha\":\"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/usuarios/15",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"usuarios",
+						"15"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Autenticar",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"ana@email.com\",\r\n    \"password\": \"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/auth",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"auth"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Clientes - Create",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJiaWFAZW1haWwuY29tIiwiaWF0IjoxNzM1MzA4NzkyLCJleHAiOjE3MzUzMTA1OTIsInJvbGUiOiJDTElFTlRFIn0.fR3zF34H_WMTAwnqezv4IHZ6cSc0v0yrWjNfy_mkABs",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\" : \"Beatriz Souza\",\r\n    \"cpf\" : \"00253964040\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/clientes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"clientes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Clientes - Find All",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBlbWFpbC5jb20iLCJpYXQiOjE3MzUzMDYzNjAsImV4cCI6MTczNTMwODE2MCwicm9sZSI6IkFETUlOIn0.NOOkit-tbexhBa-blige0JHEtydgGFZ0oPg60cg3lLA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/clientes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"clientes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Clientes - Detalhes",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0b2R5QGVtYWlsLmNvbSIsImlhdCI6MTczNTMwNzkxMCwiZXhwIjoxNzM1MzA5NzEwLCJyb2xlIjoiQ0xJRU5URSJ9.REKIACp_6Ie1wFruvb23Bs_z3c9SwhifY8WTISIH9RQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/clientes/detalhes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"clientes",
+						"detalhes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Vagas -Create",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBlbWFpbC5jb20iLCJpYXQiOjE3MzU5MjUwMDUsImV4cCI6MTczNTkzNDAwNSwicm9sZSI6IkFETUlOIn0.pUACirOVaf6MWkVALXD-xNTMbIfjnQ81_JB4UeIprhc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept-Language",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"codigo\":\"\",\r\n    \"status\":\"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/vagas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"vagas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Vagas - Get By Codigo",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBlbWFpbC5jb20iLCJpYXQiOjE3MzUzMTgyMjYsImV4cCI6MTczNTMyMDAyNiwicm9sZSI6IkFETUlOIn0.fION-0HlD751-BCwkIyiWPPKzD075PBR2_KS3Bqafqs",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/vagas/A-01",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"vagas",
+						"A-01"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Estacionamentos - CheckIn",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBlbWFpbC5jb20iLCJpYXQiOjE3MzU5MTEwMjMsImV4cCI6MTczNTkxMjgyMywicm9sZSI6IkFETUlOIn0.xo9gWsHpI7zRicaCsaNEzWPycR08aWyHFlelPCr2VYo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"clienteCpf\":\"83457792046\",\r\n    \"placa\":\"ANA-8050\",\r\n    \"marca\":\"Ferrari\",\r\n    \"modelo\":\"Ferrari 458 Síder\",\r\n    \"cor\":\"Vermelho\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/estacionamentos/check-in",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"estacionamentos",
+						"check-in"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Estacionamentos - Checkout",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBlbWFpbC5jb20iLCJpYXQiOjE3MzU5MTEwMjMsImV4cCI6MTczNTkxMjgyMywicm9sZSI6IkFETUlOIn0.xo9gWsHpI7zRicaCsaNEzWPycR08aWyHFlelPCr2VYo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/estacionamentos/check-out/20250103-103208",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"estacionamentos",
+						"check-out",
+						"20250103-103208"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Estacionamentos - Relatorio",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbmFAZW1haWwuY29tIiwiaWF0IjoxNzM2MTcwODg2LCJleHAiOjE3MzYxNzk4ODYsInJvbGUiOiJDTElFTlRFIn0.f-kVIrFJx1Is5dgXuTn9homMBL6Y2OW1kB-SUM-bats",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/estacionamentos/relatorio",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"estacionamentos",
+						"relatorio"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
