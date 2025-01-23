@@ -68,13 +68,13 @@ Este projeto é uma API Rest desenvolvida em **Spring Boot** para gerenciamento 
 ---
 
 ## Tecnologias Utilizadas
-- **Java 17**
-- **Spring Boot**
-- **Lombok**
-- **Swagger** (documentação da API)
-- **H2 Database** (banco de dados em memória)
-- **JWT** (autenticação)
-- **IntelliJ IDEA** (IDE de desenvolvimento)
+- **Java 17** ![Java](https://img.shields.io/badge/Java-17-007396?logo=java)
+- **Spring Boot** ![Spring Boot](https://img.shields.io/badge/Spring%20Boot-2.5.4-6DB33F?logo=spring-boot)
+- **Lombok** ![Lombok](https://img.shields.io/badge/Lombok-1.18.20-FF6347?logo=lombok)
+- **Swagger** ![Swagger](https://img.shields.io/badge/Swagger-3.0-85EA2D?logo=swagger)
+- **H2 Database** ![H2](https://img.shields.io/badge/H2-1.4.200-003545?logo=h2)
+- **JWT** ![JWT](https://img.shields.io/badge/JWT-0.9.1-000000?logo=json-web-tokens)
+- **IntelliJ IDEA** ![IntelliJ IDEA](https://img.shields.io/badge/IntelliJ%20IDEA-2021.2-000000?logo=intellij-idea)
 
 ---
 
