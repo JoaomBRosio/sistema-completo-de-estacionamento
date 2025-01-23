@@ -1,0 +1,134 @@
+# Sistema de Gerenciamento de Estacionamento
+
+Este projeto é uma API Rest desenvolvida em **Spring Boot** para gerenciamento de um estacionamento. O sistema inclui autenticação via **JSON Web Token (JWT)**, auditoria, e documentação dos endpoints.
+
+---
+
+## Requisitos do Sistema
+
+### Configurações
+- Configuração do **Timezone** e **Locale** para o Brasil.
+- Sistema de auditoria:
+  - Registro de data de criação e última modificação dos registros.
+  - Registro do usuário responsável pela criação ou modificação.
+- Conexão com banco de dados no ambiente de desenvolvimento.
+
+### Usuários
+- Campos obrigatórios:
+  - **E-mail**: único, usado como nome de usuário.
+  - **Senha**: no mínimo 6 caracteres.
+  - **Perfil**: administrador ou cliente.
+- Funcionalidades:
+  - Criação de usuários sem autenticação.
+  - Recuperação de dados:
+    - **Administrador**: pode acessar qualquer usuário.
+    - **Cliente**: pode acessar apenas seus próprios dados.
+  - Alteração de senha pelo próprio usuário autenticado.
+  - Listagem de todos os usuários (restrito a administradores).
+- **Testes de integração** (end-to-end) para todos os recursos.
+
+### Autenticação
+- Implementação de segurança com **JWT**.
+- Documentação completa do sistema de autenticação.
+- Testes para validação de autenticação.
+
+### Clientes
+- Vinculação obrigatória de um cliente a um usuário.
+- Campos obrigatórios:
+  - **Nome completo**.
+  - **CPF**: único.
+- Funcionalidades:
+  - **Cliente autenticado**:
+    - Recuperar seus próprios dados.
+    - Gerar relatórios em PDF com a lista de estacionamentos.
+  - **Administrador autenticado**:
+    - Listar todos os clientes.
+- **Testes de integração** (end-to-end) para os recursos.
+
+### Vagas
+- Gerenciamento restrito a administradores:
+  - Cada vaga possui um **código único** (diferente do ID).
+  - Status da vaga: **livre** ou **ocupada**.
+- **Testes de integração** (end-to-end) para as operações.
+
+### Estacionamentos
+- Controle das entradas e saídas de veículos.
+- Regras de uso:
+  - Apenas clientes cadastrados podem estacionar.
+  - Registro de informações do veículo e do cliente.
+  - Geração de **recibo único** para cada entrada.
+  - Controle de **descontos**:
+    - 30% de desconto após 10 estacionamentos completos.
+- Cálculo do custo:
+  - **Primeiros 15 minutos**: R$ 5,00.
+  - **Primeira hora completa (60 minutos)**: R$ 9,25.
+  - **A cada 15 minutos adicionais**: R$ 1,75.
+- **Testes de integração** (end-to-end) para todos os recursos.
+
+---
+
+## Tecnologias Utilizadas
+- **Java 17**
+- **Spring Boot**
+- **Lombok**
+- **Swagger** (documentação da API)
+- **H2 Database** (banco de dados em memória)
+- **JWT** (autenticação)
+- **IntelliJ IDEA** (IDE de desenvolvimento)
+
+---
+
+## Instalação e Execução
+
+```bash
+# Passo 1: Clone este repositório
+$ git clone https://github.com/JoaomBRosio/sistema-completo-de-estacionamento.git
+
+# Passo 2: Acesse o diretório do projeto
+$ cd sistema-estacionamento
+
+# Passo 3: Compile e execute a aplicação
+$ ./mvnw spring-boot:run
+
+# Passo 4: Acesse a documentação da API
+Acesse: http://localhost:8080/swagger-ui/index.html
+
+# Passo 5: Configure o banco de dados no arquivo application.properties, se necessário
+spring.datasource.url=jdbc:h2:mem:testdb
+spring.datasource.driverClassName=org.h2.Driver
+spring.datasource.username=sa
+spring.datasource.password=
+
+# Passo 6: Execute os testes para validar o funcionamento
+$ ./mvnw test
+```
+
+---
+
+## Testes
+- Este projeto possui **100% de cobertura de testes unitários**.
+- Inclui **testes de integração** (end-to-end) para validar os endpoints implementados.
+
+---
+
+## Contribuição
+```bash
+# Passo 1: Faça um fork deste repositório.
+# Passo 2: Crie uma branch para suas alterações
+$ git checkout -b minha-nova-funcionalidade
+
+# Passo 3: Faça suas alterações e adicione um commit
+$ git commit -m "Adiciona nova funcionalidade"
+
+# Passo 4: Envie para sua branch
+$ git push origin minha-nova-funcionalidade
+
+# Passo 5: Abra um Pull Request.
+```
+
+---
+
+---
+
+## Autor
+Projeto desenvolvido como parte do aprendizado em **Spring Boot** e APIs RESTful - João Ambrósio.
