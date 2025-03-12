@@ -108,26 +108,6 @@ $ ./mvnw test
 ## Testes
 - Este projeto possui **100% de cobertura de testes unitários**.
 - Inclui **testes de integração** (end-to-end) para validar os endpoints implementados.
-
----
-
-## Contribuição
-```bash
-# Passo 1: Faça um fork deste repositório.
-# Passo 2: Crie uma branch para suas alterações
-$ git checkout -b minha-nova-funcionalidade
-
-# Passo 3: Faça suas alterações e adicione um commit
-$ git commit -m "Adiciona nova funcionalidade"
-
-# Passo 4: Envie para sua branch
-$ git push origin minha-nova-funcionalidade
-
-# Passo 5: Abra um Pull Request.
-```
-
----
-
 ---
 
 ## Autor
